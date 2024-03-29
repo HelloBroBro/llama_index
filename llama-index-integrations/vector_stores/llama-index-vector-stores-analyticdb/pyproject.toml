@@ -9,10 +9,10 @@ skip = "*.csv,*.html,*.json,*.jsonl,*.pdf,*.txt,*.ipynb"
 
 [tool.llamahub]
 contains_example = false
-import_path = "llama_index.graph_stores.neo4j"
+import_path = "llama_index.vector_stores.analyticdb"
 
 [tool.llamahub.class_authors]
-Neo4jGraphStore = "llama-index"
+AnalyticDBVectorStore = "spyyang"
 
 [tool.mypy]
 disallow_untyped_defs = true
@@ -21,18 +21,19 @@ ignore_missing_imports = true
 python_version = "3.8"
 
 [tool.poetry]
-authors = ["Your Name <you@example.com>"]
-description = "llama-index graph stores neo4j integration"
+authors = ["JingYi <yangshangpo.ysp@alibaba-inc.com>"]
+description = "llama-index vector_stores analyticdb integration"
 exclude = ["**/BUILD"]
 license = "MIT"
-name = "llama-index-graph-stores-neo4j"
+name = "llama-index-vector-stores-analyticdb"
 readme = "README.md"
-version = "0.1.4"
+version = "0.1.1"
 
 [tool.poetry.dependencies]
 python = ">=3.8.1,<4.0"
 llama-index-core = "^0.10.1"
-neo4j = "^5.16.0"
+alibabacloud_gpdb20160503 = "^3.5.0"
+alibabacloud_tea_openapi = "^0.3.8"
 
 [tool.poetry.group.dev.dependencies]
 ipython = "8.10.0"
