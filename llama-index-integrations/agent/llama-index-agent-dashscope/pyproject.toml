@@ -9,10 +9,10 @@ skip = "*.csv,*.html,*.json,*.jsonl,*.pdf,*.txt,*.ipynb"
 
 [tool.llamahub]
 contains_example = false
-import_path = "llama_index.readers.azstorage_blob"
+import_path = "llama_index.agent.dashscope"
 
 [tool.llamahub.class_authors]
-AzStorageBlobReader = "rivms"
+DashScopeAgent = "robinyeeh"
 
 [tool.mypy]
 disallow_untyped_defs = true
@@ -21,21 +21,18 @@ ignore_missing_imports = true
 python_version = "3.8"
 
 [tool.poetry]
-authors = ["Your Name <you@example.com>"]
-description = "llama-index readers azstorage_blob integration"
+authors = ["Tianbing Ye <tianbing.ytb@alibaba-inc.com>"]
+description = "llama-index agent dashscope integration"
 exclude = ["**/BUILD"]
-keywords = ["azure storage", "azure", "blob", "container"]
 license = "MIT"
-maintainers = ["rivms"]
-name = "llama-index-readers-azstorage-blob"
+name = "llama-index-agent-dashscope"
 readme = "README.md"
-version = "0.1.6"
+version = "0.1.0"
 
 [tool.poetry.dependencies]
 python = ">=3.8.1,<4.0"
 llama-index-core = "^0.10.1"
-azure-storage-blob = "^12.19.0"
-azure-identity = "^1.15.0"
+dashscope = ">=1.17.0"
 
 [tool.poetry.group.dev.dependencies]
 ipython = "8.10.0"
@@ -46,7 +43,7 @@ pylint = "2.15.10"
 pytest = "7.2.1"
 pytest-mock = "3.11.1"
 ruff = "0.0.292"
-tree-sitter-languages = "^1.8.0"
+tree-sitter-languages = "~1.9.0"
 types-Deprecated = ">=0.1.0"
 types-PyYAML = "^6.0.12.12"
 types-protobuf = "^4.24.0.4"
