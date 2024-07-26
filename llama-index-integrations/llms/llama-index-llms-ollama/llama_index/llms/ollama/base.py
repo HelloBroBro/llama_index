@@ -95,6 +95,10 @@ class Ollama(FunctionCallingLLM):
         default_factory=dict,
         description="Additional model parameters for the Ollama API.",
     )
+    is_function_calling_model: bool = Field(
+        default=True,
+        description="Whether the model is a function calling model.",
+    )
 
     _client: Optional[Client] = PrivateAttr()
     _async_client: Optional[AsyncClient] = PrivateAttr()
@@ -111,6 +115,8 @@ class Ollama(FunctionCallingLLM):
         additional_kwargs: Dict[str, Any] = {},
         client: Optional[Client] = None,
         async_client: Optional[AsyncClient] = None,
+        is_function_calling_model: bool = True,
+        **kwargs: Any,
     ) -> None:
         super().__init__(
             model=model,
@@ -121,6 +127,8 @@ class Ollama(FunctionCallingLLM):
             prompt_key=prompt_key,
             json_mode=json_mode,
             additional_kwargs=additional_kwargs,
+            is_function_calling_model=is_function_calling_model,
+            **kwargs,
         )
 
         self._client = client
@@ -139,7 +147,7 @@ class Ollama(FunctionCallingLLM):
             model_name=self.model,
             is_chat_model=True,  # Ollama supports chat API for all models
             # TODO: Detect if selected model is a function calling model?
-            is_function_calling_model=True,
+            is_function_calling_model=self.is_function_calling_model,
         )
 
     @property
