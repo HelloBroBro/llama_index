@@ -8,11 +8,11 @@ check-hidden = true
 skip = "*.csv,*.html,*.json,*.jsonl,*.pdf,*.txt,*.ipynb"
 
 [tool.llamahub]
-contains_example = false
-import_path = "llama_index.postprocessor.jinaai_rerank"
+contains_example = true
+import_path = "llama_index.embeddings.gigachat"
 
 [tool.llamahub.class_authors]
-JinaRerank = "JoanFM"
+GigaChatEmbedding = "lepeshokoff200@mail.ru"
 
 [tool.mypy]
 disallow_untyped_defs = true
@@ -21,17 +21,18 @@ ignore_missing_imports = true
 python_version = "3.8"
 
 [tool.poetry]
-authors = ["Joan Fontanals <joan.fontanals.martinez@jina.ai>"]
-description = "llama-index postprocessor jinaai rerank integration"
+authors = ["Kirill Kukharev <lepeshokoff200@mail.ru>"]
+description = "llama-index embeddings gigachat integration"
 exclude = ["**/BUILD"]
 license = "MIT"
-name = "llama-index-postprocessor-jinaai-rerank"
+name = "llama-index-embeddings-gigachat"
 readme = "README.md"
-version = "0.1.7"
+version = "0.1.5"
 
 [tool.poetry.dependencies]
 python = ">=3.8.1,<4.0"
-llama-index-core = "^0.10.41"
+llama-index-core = "^0.10.1"
+gigachat = "0.1.28"
 
 [tool.poetry.group.dev.dependencies]
 ipython = "8.10.0"
