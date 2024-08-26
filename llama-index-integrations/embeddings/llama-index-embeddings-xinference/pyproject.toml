@@ -9,10 +9,10 @@ skip = "*.csv,*.html,*.json,*.jsonl,*.pdf,*.txt,*.ipynb"
 
 [tool.llamahub]
 contains_example = false
-import_path = "llama_index.embeddings.azure_openai"
+import_path = "llama_index.embeddings.xinference"
 
 [tool.llamahub.class_authors]
-AzureOpenAIEmbedding = "llama-index"
+XinferenceEmbedding = "llama-index"
 
 [tool.mypy]
 disallow_untyped_defs = true
@@ -22,17 +22,15 @@ python_version = "3.8"
 
 [tool.poetry]
 authors = ["Your Name <you@example.com>"]
-description = "llama-index embeddings azure openai integration"
+description = "llama-index embeddings xinference integration"
 exclude = ["**/BUILD"]
 license = "MIT"
-name = "llama-index-embeddings-azure-openai"
+name = "llama-index-embeddings-xinference"
 readme = "README.md"
-version = "0.2.4"
+version = "0.1.0"
 
 [tool.poetry.dependencies]
 python = ">=3.8.1,<4.0"
-llama-index-llms-azure-openai = "^0.2.0"
-llama-index-embeddings-openai = "^0.2.3"
 llama-index-core = "^0.11.0"
 
 [tool.poetry.group.dev.dependencies]
