@@ -9,10 +9,10 @@ skip = "*.csv,*.html,*.json,*.jsonl,*.pdf,*.txt,*.ipynb"
 
 [tool.llamahub]
 contains_example = false
-import_path = "llama_index.llms.cohere"
+import_path = "llama_index.postprocessor.siliconflow_rerank"
 
 [tool.llamahub.class_authors]
-Cohere = "llama-index"
+SiliconFlowRerank = "nightosong"
 
 [tool.mypy]
 disallow_untyped_defs = true
@@ -21,17 +21,16 @@ ignore_missing_imports = true
 python_version = "3.8"
 
 [tool.poetry]
-authors = ["Your Name <you@example.com>"]
-description = "llama-index llms cohere integration"
+authors = ["nightosong"]
+description = "llama-index postprocessor siliconflow rerank integration"
 exclude = ["**/BUILD"]
 license = "MIT"
-name = "llama-index-llms-cohere"
+name = "llama-index-postprocessor-siliconflow-rerank"
 readme = "README.md"
-version = "0.3.2"
+version = "0.1.0"
 
 [tool.poetry.dependencies]
 python = ">=3.8.1,<4.0"
-cohere = "^5.1.1"
 llama-index-core = "^0.11.0"
 
 [tool.poetry.group.dev.dependencies]
